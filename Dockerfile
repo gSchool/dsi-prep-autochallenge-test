@@ -1,7 +1,7 @@
 FROM python:3.8
 
 ADD test.py .
-ADD ./images .
+ADD ./images/. .
 ADD test.sh .
 
 RUN pip install matplotlib
