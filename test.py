@@ -6,11 +6,11 @@ import unittest
 
 class TestImageLikeness(unittest.TestCase):
     def test_image1_and_image2(self):
-        img2 = Image.open('./images/plt2.png')
-        img3 = Image.open('./images/plt3.png')
-        img2_arr = np.asarray(img2)
-        img3_arr = np.asarray(img3)
-        rms_value = test.calculate_rms(img2_arr, img3_arr)
+        our_sol = Image.open('./images/correct_solution.png')
+        student_sol = Image.open('./images/student_solution.png')
+        our_sol = np.asarray(our_sol)
+        student_sol  = np.asarray(student_sol)
+        rms_value = test.calculate_rms(our_sol, student_sol)
         self.assertTrue(rms_value <= 10)
 
 
