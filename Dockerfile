@@ -1,15 +1,14 @@
 FROM python:3.8
 
-RUN mkdir /app
-
-WORKDIR /app
+# makes DIR and CD into it
+WORKDIR /app 
 
 ARG SUBMISSION_SUBFOLDER
-ADD $SUBMISSION_SUBFOLDER /app
+COPY $SUBMISSION_SUBFOLDER ./
 
-ADD test.py /app
-ADD test.sh /app
-COPY images/ /app/images/
+COPY test.py ./
+COPY test.sh ./
+COPY images/ ./images/
 
 RUN pip install matplotlib
 RUN pip install numpy
