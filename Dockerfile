@@ -5,13 +5,11 @@ FROM python:3.8
 WORKDIR /app
 
 # Installs packages needed for running test.py
-RUN pip install matplotlib
-RUN pip install numpy
-RUN pip install Pillow
+COPY test_requirements.txt ./
+RUN pip install --no-cache-dir -r test_requirements.txt
 
 # Student code from the URL submitted in Learn
 ARG SUBMISSION_SUBFOLDER
-
 # Any source changes will rebuild all the following layers
 COPY $SUBMISSION_SUBFOLDER ./
 
