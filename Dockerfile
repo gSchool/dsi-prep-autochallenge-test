@@ -1,5 +1,5 @@
 # Start from the official python image: https://hub.docker.com/_/python
-FROM python:3.8
+FROM python:3.8-slim
 
 # Makes directory and changes working directory to it
 WORKDIR /app
